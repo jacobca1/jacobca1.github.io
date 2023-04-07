@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Urban Toxicity Mapping Project</title>
+ <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
+   
+<!--Auto Modal CSS-->
+    <link rel="stylesheet" href="/Auto-Modal-Popup.css"> 
+ 
+ <!--General Style Sheet-->   
+    <link rel="stylesheet" href="css/style.css">
+    
+<!--Leaflet Style files-->   
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+   integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+   crossorigin=""/>
+
+<!--Map Style-->
+<style>
+    #map { height: 800px; 
+            width: 800;
+            margin: 1rem auto;
+            padding-top: 10px;
+            padding-right: 25px;
+            padding-left: 25px;
+            padding-bottom: 25px;
+
+        }
+</style>
+</head>
+<body>
+   <h1>Urban Toxicity Mapping Project</h1>
+
+  <!-- Modal -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="UTMmodal" aria-labelledby="UTMModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="UTMModalLabel">The Urban Toxicity Mapping Project</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>This project aims to document urban environmental injustices across the United States. 
+            As essential infrastructure decays around us, pipes and housing that have been trustworthy
+            for decades are becoming sources of contamination and old sources of contamination are getting worse. 
+            Each point on this map represents a place where real people are confronting environmental toxins in their
+            everyday lives. Clicking on one of the locations will take you to a digital photovoice exhibit,
+            which uses photos and narratives to document the challenges faced by those who live there. 
+            For more details, visit our "About the Project" page!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!--Navbar-->
+
+   <div class="topnav">
+    <a href="about.html">About the Project</a>
+    <a class="active" href="index.html">Map Home</a>
+     </div> 
+
+
+<!--Map code-->
+   <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+    <script src="mapproperties.js"></script>
+
+<!--Bootstrap JS code CDN-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+
+<!--Auto Modal Script-->
+<script src="Auto-Modal-Popup.js"></script>
+
+
+</body>
+</html>
