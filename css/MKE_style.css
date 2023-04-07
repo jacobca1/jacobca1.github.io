@@ -11,7 +11,7 @@ html{
     margin: 0 auto;
     padding: 0;
     height: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
   }
   
 *, *::before, *::after {
@@ -23,6 +23,73 @@ img{
     height: auto;
     display: block;
 }
+
+/*Begin NavBar Styles*/
+  .header-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    line-height: 2rem;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    background-color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .logo,
+  .nav-menu{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-item {
+    flex: 1 0 50%;
+    text-align: center;
+  }
+
+  .logo a,
+  .nav-menu a{
+    display: block;
+    text-decoration: none;
+    letter-spacing: 0.2rem;
+    padding: 0.8rem;
+    color: black;
+  }
+
+  .logo a {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  .nav-menu a {
+    letter-spacing: 0.1rem;
+    border-bottom: 1px solid #fff;
+    transition: all ease 0.2s;
+  }
+
+  .nav-menu a:hover {
+    background-color: #fff;
+    color: black;
+    transform: none;
+    border-bottom: 1px solid black;
+    transition: all ease 0.2s;
+  }
+
+  .nav-menu a:active {
+    transform: scale(0.9);
+  }
+
+  
   /*Begin Grid Gallery Styles*/
   .gallery-page {
     padding: 0 1rem 10rem 1rem;
@@ -68,6 +135,36 @@ img{
   }
 
 /*Begin Media Queries for Larger Screen*/
+@media (min-width: 600px) {
+    .header-nav {
+        line-height: 1.5rem;
+    }
+    .nav-menu {
+        width: 100%;
+    }
+    .nav-item {
+        flex: 1 0 10%;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .header-nav {
+        justify-content: space-between;
+        padding: 1rem 0;
+        margin: 1rem auto 2rem auto;
+        line-height: 1rem;
+    }
+    .nav-item {
+        white-space: nowrap;
+    }
+    .nav-menu {
+        width: auto;
+    }
+    .logo {
+        margin: 0 0 0 0.3rem;
+    }
+  }
+
 
 @media (min-width: 600px){
 
