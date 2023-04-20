@@ -13,11 +13,11 @@ var marker = L.marker([43.072, -87.936]).addTo(map);
 
 // Add popup message MKE
 
-marker.bindPopup('<a href="MKE.html"><h1> Milwaukee Lead Epidemic </h1></a>');
+marker.bindPopup('<a href="mke.html"><h1> Milwaukee Lead Epidemic </h1></a>');
 
 //Add Pop-up Flint
 var marker = L.marker([43.0167321719256, -83.68955030409722]).addTo(map)
 
 //Add pop-up message Flint
 
-marker.bindPopup('<a href="MKE.html"><h1> Flint Water Crisis </h1></a>')
+marker.bindPopup('<a href="mke.html"><h1> Flint Water Crisis </h1></a>')
