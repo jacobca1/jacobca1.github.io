@@ -100,6 +100,8 @@ img{
     gap: 20px;
     font-family: 'Courier New', Courier, monospace;
     padding-top: 30px;
+    overflow: hidden;
+    position: relative;
 }
 
 .cards * {
@@ -135,6 +137,7 @@ img{
 .card__content > h2:last-of-type {
     margin-bottom: 0;
 }
+
 
 
   /*Begin Grid Gallery Styles*/
