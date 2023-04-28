@@ -196,53 +196,17 @@ img{
   .gallery-img:hover {
     transform: scale(1.5);
   }
-/*Having to Fight*/
-  .hf-gallery-item:last-child{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row: 2;
-  }
-  .hf-gallery-columns {
-    display: grid;
-    gap: .5rem;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-areas:
-      'one'
-      'two'
-      'three'
-      'four'
-      'five'
-      'six'
-    
-  padding-block: .5rem;
-  width: min(95%, 70rem);
-  margin-inline: auto;
-  }
-
-
-  .hf-gallery-item {
-    padding: .5rem;
-    border-radius: 0.5rem;
-    overflow: hidden;
-  }
-
 /*Don't Trust*/
 
 .dt-gallery-columns {
   display: grid;
   gap: .5rem;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-areas:
-    'one'
-    'two'
-    'three'
-    'four'
-    'five'
-    'six'
-  
-padding-block: .5rem;
-width: min(95%, 70rem);
-margin-inline: auto;
+
+
+  padding-block: .5rem;
+  width: min(95%, 70rem);
+  margin-inline: auto;
 }
 
 
@@ -252,6 +216,28 @@ margin-inline: auto;
   overflow: hidden;
 }
 
+/*Having to Fight*/
+.hf-gallery-item:last-child{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 2;
+}
+.hf-gallery-columns {
+  display: grid;
+  gap: .5;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(2, 400px);
+padding-block: .5rem;
+width: min(95%, 70rem);
+margin-inline: auto;
+}
+
+
+.hf-gallery-item {
+  padding: .5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
 
 @media (min-width: 50em) {
   
@@ -275,12 +261,6 @@ margin-inline: auto;
   .grid-row-span-2{
     grid-row: span 2;
   }
-
-  .hf-gallery-item:last-child{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row: 2;
-  }
 }
 
 @media (max-width: 700px){
@@ -289,6 +269,38 @@ margin-inline: auto;
     grid-template-columns: 1fr;
   }
 
+}
+
+
+/*Teaching the Next Generation*/
+
+.tng-gallery-columns {
+display: grid;
+gap: .5;
+
+padding-block: .5rem;
+width: min(95%, 70rem);
+margin-inline: auto;
+}
+
+.tng-gallery-item {
+  padding: .5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+
+@media (min-width: 50em) {
+  
+  .tng-gallery-columns{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-col-span-2{
+    grid-column: span 2;
+  }
+  .grid-row-span-2{
+    grid-row: span 2;
+  }
 }
 
 
