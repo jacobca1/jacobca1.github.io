@@ -3,13 +3,13 @@ html{
     font-size: 100%;
     line-height: 1.5rem;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Work Sans', sans-serif;
     height: 100%;
   }
   
   body{
     margin: 0 auto;
-    padding: 0 20 0;
+    padding: 0 1rem 10rem 1rem;
     height: 100%;
     max-width: 1200px;
   }
@@ -34,7 +34,7 @@ img{
     overflow: hidden;
     margin-bottom: 0.5rem;
     background-color: aliceblue;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Work Sans', sans-serif;
   }
 
   .logo,
@@ -89,6 +89,36 @@ img{
     transform: scale(0.9);
   }
 
+/*Begin Navbar Media Queries for Larger Screen*/
+@media (min-width: 600px) {
+  .header-nav {
+      line-height: 1.5rem;
+  }
+  .nav-menu {
+      width: 100%;
+  }
+  .nav-item {
+      flex: 1 0 10%;
+  }
+}
+
+@media (min-width: 900px) {
+  .header-nav {
+      justify-content: space-between;
+      padding: 1rem 0;
+      margin: 1rem auto 2rem auto;
+      line-height: 1rem;
+  }
+  .nav-item {
+      white-space: nowrap;
+  }
+  .nav-menu {
+      width: auto;
+  }
+  .logo {
+      margin: 0 0 0 0.3rem;
+  }
+}
 
   /*Begin Theme Card Styles*/
   .cards {
@@ -98,7 +128,7 @@ img{
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
     grid-auto-rows: auto;
     gap: 20px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Work Sans', sans-serif;
     padding-top: 30px;
     overflow: hidden;
     position: relative;
@@ -145,25 +175,16 @@ img{
     padding: 0 1rem 10rem 1rem;
   }
   
-  .gallery-auto-fit {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: 300px;
-    grid-gap: 0.5rem;
+  .grid-col-span-2{
+    grid-column: span 2;
   }
-
-  .gallery-span {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: 300px;
-    grid-gap: 0.5rem;
-    grid-auto-flow: dense;
+  
+  .grid-col-span-3{
+    grid-column: span 3;
   }
-
-  .gallery-item {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
+  
+  .grid-row-span-2{
+    grid-row: span 2;
   }
 
   .gallery-img{
@@ -175,91 +196,116 @@ img{
   .gallery-img:hover {
     transform: scale(1.5);
   }
+/*Don't Trust*/
 
-  .w-1, .w-2, .w-3, .w-4, .w-5, .w-6{
-    grid-column: span 1;
+.dt-gallery-columns {
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: repeat(7, 1fr);
+
+
+  padding-block: .5rem;
+  width: min(95%, 70rem);
+  margin-inline: auto;
+}
+
+
+.dt-gallery-item {
+  padding: .5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/*Having to Fight*/
+.hf-gallery-item:last-child{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 2;
+}
+.hf-gallery-columns {
+  display: grid;
+  gap: .5;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(2, 400px);
+padding-block: .5rem;
+width: min(95%, 70rem);
+margin-inline: auto;
+}
+
+
+.hf-gallery-item {
+  padding: .5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+@media (min-width: 50em) {
+  
+
+  .hf-gallery-columns{
+    grid-template-columns: repeat(7, 1fr);
   }
-
-  .h-1, .h-2, .h-3, .h-4, .h-5, .h-6{
-    grid-row: span 1;
+  .hf-gallery-item:last-child{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 2;
   }
-
-/*Begin Media Queries for Larger Screen*/
-@media (min-width: 600px) {
-    .header-nav {
-        line-height: 1.5rem;
-    }
-    .nav-menu {
-        width: 100%;
-    }
-    .nav-item {
-        flex: 1 0 10%;
-    }
+  .grid-col-span-2{
+    grid-column: span 2;
   }
-
-  @media (min-width: 900px) {
-    .header-nav {
-        justify-content: space-between;
-        padding: 1rem 0;
-        margin: 1rem auto 2rem auto;
-        line-height: 1rem;
-    }
-    .nav-item {
-        white-space: nowrap;
-    }
-    .nav-menu {
-        width: auto;
-    }
-    .logo {
-        margin: 0 0 0 0.3rem;
-    }
+  
+  .grid-col-span-3{
+    grid-column: span 3;
   }
+  
+  .grid-row-span-2{
+    grid-row: span 2;
+  }
+}
 
+@media (max-width: 700px){
 
-@media (min-width: 600px){
-
- .gallery-span {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-     grid-auto-rows: 300px;
-     }
-
-    .w-1{
-        grid-column: span 1;
-    }
-    .w-2{
-        grid-column: span 2;
-    }
-    .w-3{
-        grid-column: span 3;
-    }
-    .w-4{
-        grid-column: span 4;
-    }
-    .w-5{
-        grid-column: span 5;
-    }
-    .w-6{
-        grid-column: span 6;
-    }
-
-    .h-1{
-        grid-row: span 1;
-    }
-    .h-2{
-        grid-row: span 2;
-    }
-    .h-3{
-        grid-row: span 3;
-    }
-    .h-4{
-        grid-row: span 4;
-    }
-    .h-5{
-        grid-row: span 5;
-    }
-    .h-6{
-        grid-row: span 6;
-    }
+  .hf-gallery-columns{
+    grid-template-columns: 1fr;
+  }
 
 }
+
+
+/*Teaching the Next Generation*/
+
+.tng-gallery-columns {
+display: grid;
+gap: .5;
+
+padding-block: .5rem;
+width: min(95%, 70rem);
+margin-inline: auto;
+}
+
+.tng-gallery-item {
+  padding: .5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+
+@media (min-width: 50em) {
+  
+  .tng-gallery-columns{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-col-span-2{
+    grid-column: span 2;
+  }
+  .grid-row-span-2{
+    grid-row: span 2;
+  }
+}
+
+
+
+
+
+
+
