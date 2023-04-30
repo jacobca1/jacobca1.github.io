@@ -11,7 +11,7 @@ html{
     margin: 0 auto;
     padding: 0 1rem 10rem 1rem;
     height: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
   }
   
 *, *::before, *::after {
@@ -33,7 +33,7 @@ img{
     line-height: 2rem;
     overflow: hidden;
     margin-bottom: 0.5rem;
-    background-color: aliceblue;
+    background-color: #acd5ff;
     font-family: 'Work Sans', sans-serif;
   }
 
@@ -59,7 +59,7 @@ img{
     text-decoration: none;
     letter-spacing: 0.2rem;
     padding: 0.8rem;
-    color: black;
+    color: #233a6c;
   }
 
   .logo a {
@@ -130,6 +130,7 @@ img{
     gap: 20px;
     font-family: 'Work Sans', sans-serif;
     padding-top: 30px;
+    padding-bottom: 20px;
     overflow: hidden;
     position: relative;
 }
@@ -168,7 +169,9 @@ img{
     margin-bottom: 0;
 }
 
-
+.card__content a:link{
+  color: #233a6c;
+}
 
   /*Begin Grid Gallery Styles*/
   .gallery-page {
@@ -196,25 +199,58 @@ img{
   .gallery-img:hover {
     transform: scale(1.5);
   }
-/*Don't Trust*/
 
-.dt-gallery-columns {
-  display: grid;
-  gap: .5rem;
-  grid-template-columns: repeat(7, 1fr);
-
-
-  padding-block: .5rem;
-  width: min(95%, 70rem);
-  margin-inline: auto;
-}
-
-
-.dt-gallery-item {
-  padding: .5rem;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
+  /*Don't Trust*/
+  .dt-gallery-columns {
+    display: grid;
+    gap: .5;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+      'one'
+      'two'
+      'three'
+      'four'
+      'five';
+    
+    padding-block: .5rem;
+    width: min(95%, 70rem);
+    margin-inline: auto;
+    }
+    
+    
+    .dt-gallery-item {
+      padding: .5rem;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+    
+    .dt-gallery-item:nth-child(1){
+      grid-area: one;
+    }
+    
+    .dt-gallery-item:nth-child(2){
+      grid-area: two;
+    }
+    .dt-gallery-item:nth-child(3){
+      grid-area: three;
+    }
+    .dt-gallery-item:nth-child(4){
+      grid-area: four;
+    }
+    .dt-gallery-item:nth-child(5){
+      grid-area: five;
+    }
+    
+    @media screen and (min-width: 35em) {
+      .dt-gallery-columns{
+          grid-template-areas: 
+            "one one one one one two two three three"
+            "four four four four five five five three three";      
+          
+      }
+    
+      
+    }
 
 /*Having to Fight*/
 .hf-gallery-item:last-child{
@@ -269,6 +305,64 @@ margin-inline: auto;
     grid-template-columns: 1fr;
   }
 
+}
+
+/*Others Need to Learn*/
+.onl-gallery-columns {
+display: grid;
+gap: .5;
+grid-auto-columns: 1fr;
+grid-template-areas:
+  'one'
+  'two'
+  'three'
+  'four'
+  'five'
+  'six';
+
+padding-block: .5rem;
+width: min(95%, 70rem);
+margin-inline: auto;
+}
+
+
+.onl-gallery-item {
+  padding: .5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.onl-gallery-item:nth-child(1){
+  grid-area: one;
+}
+
+.onl-gallery-item:nth-child(2){
+  grid-area: two;
+}
+.onl-gallery-item:nth-child(3){
+  grid-area: three;
+}
+.onl-gallery-item:nth-child(4){
+  grid-area: four;
+}
+.onl-gallery-item:nth-child(5){
+  grid-area: five;
+}
+.onl-gallery-item:nth-child(6){
+  grid-area: six;
+}
+
+@media screen and (min-width: 35em) {
+  .onl-gallery-columns{
+      grid-template-areas: 
+        "one two two two three"
+        "one four five six three";      
+      
+      
+
+  }
+
+  
 }
 
 

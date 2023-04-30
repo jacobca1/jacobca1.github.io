@@ -3,22 +3,33 @@ html{
   font-size: 100%;
   line-height: 1.5rem;
   box-sizing: border-box;
-  font-family: 'Work Sans', sans-serif;
+  font-family:'Sofia Sans Semi Condensed', sans-serif;
   height: 100%;
 }
 
 body{
   margin: 0 auto;
-  padding: 0;
+  padding: 0 1rem 10rem 1rem;
   height: 100%;
   max-width: 1400px;
+  font-family:'Sofia Sans Semi Condensed', sans-serif;
+  background-color: #1e1e24;
+  
 }
 
+h1{
+  color:#f2f2f2
+}
+
+h2{
+  color:#1e1e24
+}
 /*styling for navbar*/
 
 .topnav {
-  background-color: #1823c4;
+  background-color: #a04424;
   overflow: hidden;
+  color: ;
 }
 
 /* Style the links inside the navigation bar */
@@ -34,15 +45,21 @@ body{
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #f2f2f2;
   color: black;
 }
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-  background-color: #04AA6D;
+  background-color: #7b7b7b;
   color: white;
 }
 
+.about-summary{
+  background-color: #f2f2f2;
+  padding: 1em;
+  margin-top: 1em;
+}
 
 
+/*Pop-up Styling*/
