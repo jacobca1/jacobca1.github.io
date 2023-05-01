@@ -6,17 +6,32 @@ html{
     font-family: 'Work Sans', sans-serif;
     height: 100%;
   }
-  
+ 
+  header{
+    width: 100%;
+    background: #ffff;
+    margin: 0;
+    border-bottom: 5px solid #4789c9;
+   
+  }
+
+  #header h1{
+    margin:0px;
+}
+
+
   body{
-    margin: 0 auto;
-    padding: 0 1rem 10rem 1rem;
+    margin: 0;
+    padding: 0;
     height: 100%;
-    max-width: 1300px;
+    color:#233a6c;
   }
   
 *, *::before, *::after {
     box-sizing:inherit;
 }
+
+
 
 img{
     width: 100%;
@@ -32,9 +47,10 @@ img{
     align-items: center;
     line-height: 2rem;
     overflow: hidden;
-    margin-bottom: 0.5rem;
-    background-color: #acd5ff;
+    margin-bottom: 0;
+    background-color: white;
     font-family: 'Work Sans', sans-serif;
+    width: 100%;
   }
 
   .logo,
@@ -42,10 +58,10 @@ img{
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     padding: 0;
-    margin: 0;
+    margin: auto;
   }
 
   .nav-item {
@@ -73,12 +89,12 @@ img{
 
   .nav-menu a {
     letter-spacing: 0.1rem;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px;
     transition: all ease 0.2s;
   }
 
   .nav-menu a:hover {
-    background-color: #fff;
+    background-color: #7ec106;
     color: black;
     transform: none;
     border-bottom: 1px solid black;
@@ -120,6 +136,37 @@ img{
   }
 }
 
+
+/*Background Section*/
+
+#mke-title{
+  text-align: center;
+}
+
+.background-section{
+  margin:auto;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  width: 75%;
+  text-align: justify;
+}
+
+.background-section a{
+  color:#233a6c
+}
+
+.background-section a:hover{
+  color:#4789c9;
+}
+
+#phv-question {
+  text-align: center;
+}
+
+
+
   /*Begin Theme Card Styles*/
   .cards {
     margin: 0 auto;
@@ -130,6 +177,8 @@ img{
     gap: 20px;
     font-family: 'Work Sans', sans-serif;
     padding-top: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
     padding-bottom: 20px;
     overflow: hidden;
     position: relative;
@@ -161,6 +210,19 @@ img{
     border-bottom: 2px solid #333333;
 }
 
+.card_content a{
+  color:#233a6c;
+  text-decoration: none;
+}
+
+.card__content a:visited{
+  color: #233a6c;
+  text-decoration: none;
+}
+
+.card__content a:hover{
+  color: #4789c9;
+}
 .card__content > h2:first-of-type {
     margin-top: 0;
 }
@@ -169,8 +231,15 @@ img{
     margin-bottom: 0;
 }
 
-.card__content a:link{
-  color: #233a6c;
+
+.theme-background-section{
+  margin:auto;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  width: 75%;
+  text-align: justify;
 }
 
   /*Begin Grid Gallery Styles*/
@@ -215,6 +284,7 @@ img{
     padding-block: .5rem;
     width: min(95%, 70rem);
     margin-inline: auto;
+    margin-top: 30px
     }
     
     
@@ -253,6 +323,7 @@ img{
     }
 
 /*Having to Fight*/
+
 .hf-gallery-item:last-child{
   grid-column-start: 1;
   grid-column-end: 3;
@@ -398,6 +469,117 @@ margin-inline: auto;
 }
 
 
+/*Footer*/
+
+footer{
+  margin-top:60px;
+}
+
+.footer-column-grid {
+  display: grid;
+  gap: 0;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-template-areas:
+    'one'
+    'two'
+    'three'
+    'four';
+      
+  padding-block:.5rem;
+  width:100%;
+  margin-inline: auto;
+  background-color: #4789c9;
+  }
+  
+  
+  .footer-column-grid {
+    padding: .5rem;
+    overflow: hidden;
+    background-color:#4789c9;
+    text-align: center;
+  }
+
+  .contact-us {
+    padding: 0px;
+    overflow: hidden;
+    background-color: #4789c9;
+    text-align: center;
+    margin: auto;
+    line-height: 12px;
+  }
+
+.utp {
+  padding: 0px;
+  overflow: hidden;
+  background-color: #4789c9;
+  text-align: center;
+  margin: auto;
+}
+
+#utc-summary{
+  font-size: small;
+  line-height: 15px;
+  color:#fafafa
+}
+
+.cole {
+  padding: 0px;
+    overflow: hidden;
+    background-color:#4789c9;
+    text-align: center;
+    margin: auto;
+
+}
+
+.mke-copyright {
+  padding: 0px;
+    overflow: hidden;
+    background-color:#4789c9;
+    text-align: center;
+    margin: auto;
+
+}
+
+
+
+a, a:link {
+  color:#233a6c;
+  text-decoration: none;
+}
+
+a:hover {
+  color:#7ec106;
+}
+
+
+  .contact-us{
+    grid-area: one;
+  }
+  
+  .utp{
+    grid-area: two;
+  }
+
+  .cole{
+    grid-area: three;
+  }
+  
+  .mke-copyright{
+    grid-area: four;
+  }
+
+  @media screen and (min-width: 35em) {
+    .footer-column-grid{
+        grid-template-areas: 
+          "one one"
+          "two three"
+          "four four";      
+        
+    }
+  
+    
+  }
 
 
 

@@ -7,15 +7,188 @@ html{
   height: 100%;
 }
 
+:root {
+  --background: rgba(160, 68, 36, 1);
+}
+
 body{
-  margin: 0 auto;
-  padding: 0 1rem 10rem 1rem;
+  margin: auto;
+  padding-top: 10px;
   height: 100%;
-  max-width: 1400px;
+  max-width: 100%;
   font-family:'Sofia Sans Semi Condensed', sans-serif;
   background-color: #1e1e24;
   
 }
+/*Navigation*/
+header {
+  background: var(--background);
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+  outline: 3px solid rgba(lightblue, .75);
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: #1e1e24;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+  
+  .logo {
+    grid-column: 2 / 3;
+    color:#f2f2f2
+  }
+  
+  nav {
+    // all: unset; /* this causes issues with Edge, since it's unsupported */
+    
+    /* the following lines are not from my video, but add Edge support */
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1,1);
+    background: none;
+    top: initial;
+    left: initial;
+    /* end Edge support stuff */
+    
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+  }
+  
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+  
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+  
+  nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+  
+  nav a:hover::before {
+    transform: scale(1,1);
+  }
+}
+
+.logo
 
 h1{
   color:#f2f2f2
@@ -24,42 +197,112 @@ h1{
 h2{
   color:#1e1e24
 }
-/*styling for navbar*/
 
-.topnav {
-  background-color: #a04424;
-  overflow: hidden;
-  color: ;
+h3{
+
+
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: right;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+#map {
+  height: 800px;
+  width: 800;
+  margin: 20;
+  padding-top: 30px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 25px;
+
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #f2f2f2;
-  color: black;
+.map-container{
+  margin-top: 65px;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-bottom: 40px;
 }
 
-/* Add an active class to highlight the current page */
-.topnav a.active {
-  background-color: #7b7b7b;
-  color: white;
-}
 
 .about-summary{
   background-color: #f2f2f2;
   padding: 1em;
-  margin-top: 1em;
+  margin-top: 10em;
+  margin-right: 1em;
+  margin-left: 1em;
 }
 
 
-/*Pop-up Styling*/
+/*Footer*/
+
+.footer-column-grid {
+  display: grid;
+  gap: 0;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    'one'
+    'two'
+    'three'
+      
+  padding-block:.5rem;
+  width:100%;
+  margin-inline: auto;
+  background-color: #a04424;
+  }
+  
+  
+  .project-name {
+    padding: .5rem;
+    overflow: hidden;
+    background-color: #a04424;
+    text-align: center;
+  }
+
+.copyright {
+  padding: .5rem;
+    overflow: hidden;
+    background-color: #a04424;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.contact-info {
+  padding: .5rem;
+    overflow: hidden;
+    background-color: #a04424;
+    text-align: center;
+    margin: auto;
+
+}
+
+a, a:link {
+  color: #1e1e24;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f2f2f2;
+}
+
+
+  .footer-column-grid:project-name{
+    grid-area: one;
+  }
+  
+  .footer-column-grid:copyright{
+    grid-area: two;
+  }
+
+  .footer-column-grid:contact-info{
+    grid-area: three;
+  }
+  
+  @media screen and (min-width: 35em) {
+    .footer-column-grid{
+        grid-template-areas: 
+          "one two three";      
+        
+    }
+  
+    
+  }
+
+ 
