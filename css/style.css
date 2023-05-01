@@ -134,6 +134,7 @@ nav a:hover {
   
   .logo {
     grid-column: 2 / 3;
+    color:#f2f2f2
   }
   
   nav {
@@ -187,7 +188,7 @@ nav a:hover {
   }
 }
 
-
+.logo
 
 h1{
   color:#f2f2f2
@@ -195,6 +196,11 @@ h1{
 
 h2{
   color:#1e1e24
+}
+
+h3{
+
+
 }
 
 #map {
@@ -220,7 +226,83 @@ h2{
   background-color: #f2f2f2;
   padding: 1em;
   margin-top: 10em;
+  margin-right: 1em;
+  margin-left: 1em;
 }
 
 
+/*Footer*/
 
+.footer-column-grid {
+  display: grid;
+  gap: 0;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    'one'
+    'two'
+    'three'
+      
+  padding-block:.5rem;
+  width:100%;
+  margin-inline: auto;
+  background-color: #a04424;
+  }
+  
+  
+  .project-name {
+    padding: .5rem;
+    overflow: hidden;
+    background-color: #a04424;
+    text-align: center;
+  }
+
+.copyright {
+  padding: .5rem;
+    overflow: hidden;
+    background-color: #a04424;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.contact-info {
+  padding: .5rem;
+    overflow: hidden;
+    background-color: #a04424;
+    text-align: center;
+    margin: auto;
+
+}
+
+a, a:link {
+  color: #1e1e24;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f2f2f2;
+}
+
+
+  .footer-column-grid:project-name{
+    grid-area: one;
+  }
+  
+  .footer-column-grid:copyright{
+    grid-area: two;
+  }
+
+  .footer-column-grid:contact-info{
+    grid-area: three;
+  }
+  
+  @media screen and (min-width: 35em) {
+    .footer-column-grid{
+        grid-template-areas: 
+          "one two three";      
+        
+    }
+  
+    
+  }
+
+ 
